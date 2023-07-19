@@ -6,7 +6,7 @@ This is a project built from scratch to go through the setup of DNS, DHCP, AD DS
 This project is aided by GitHub Copilot in its construction and documentation.
 
 ## Main features
-
+- Azure Virtual Machine
 
 ## Reflections
 ### Major hiccups and mitigation
