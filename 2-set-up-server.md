@@ -43,7 +43,7 @@
 10. Enter the network ID same as the first three numbers of the VM private address. Then Allow only secure dynamic updates. Click Finish.
 11. Click winser.local in Forward Lookup Zones. Right click the domain controller. Click properties. Tick the box of Update associated pointer (PTR) record. Click Apply and then OK. If there is an error message saying created zone cannot be found, it means the network ID has a typo.
 
-# DHCP
+# DHCP (on-prem)
 1. Go to Server Manager. Click Notifications. Click Complete DHCP configuration.
 2. Click Next. Then Commit. Then Close.
 3. Back to Server Manager. Click Tools. Click DHCP.
@@ -55,5 +55,13 @@
 9. Enter the IP address of the default gateway (e.g. 10.1.0.1). Click Next.
 10. Check the IP address of the DNS server (leave it as the same VM private address). Click until finish.
 
+# Test DHCP Scope (on-prem)
+1. Create a new Windows Server 2022 VM with the same VNet and subnet. Assign a new username and password. Keep the VM private address as dynamic but everything else as the same as the first VM created. Review + create.
+2. Connect to the VM.
+3. Search for Advanced system settings. Click the Computer Name tab. Click Change.
+4. Click Domain. Enter the domain name (e.g. winser.local). Click OK.
+
+# Notes on DHCP server on Azure
+DHCP servers are not supported by Azure. ([Source](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#can-i-deploy-a-dhcp-server-in-a-vnet)
 
 
