@@ -10,6 +10,8 @@ This project is aided by GitHub Copilot in its construction and documentation.
 
 ## Reflections
 ### Major hiccups and mitigation
-
+- Section 1: Since this VM will be cleaned up after the labs, so I will use a faster VM size, Standard D2s v3, instead of the B1s, which would make Server Manager crash.
 
 ### Future improvement
+- Azure DNS as an alternative to Windows DNS
+- Automation
