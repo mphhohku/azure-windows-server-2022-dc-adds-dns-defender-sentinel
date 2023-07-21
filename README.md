@@ -1,7 +1,7 @@
-# DNS, DHCP, AD DS, and Cloud Security on Azure Windows Server 2022 Simple Lab Project
+# Domain Controller, AD DS, DNS, DHCP, Microsoft Defender for Cloud, Microsoft Sentinel on Azure Windows Server 2022 VMs Simple Lab Project
 
 ## Introduction
-This is a simple lab project built from referencing online tutorials to go through the setup of DNS, DHCP, AD DS and cloud security tools Microsoft Sentinel and Microsoft Defender for Cloud on Azure Windows Server 2022.
+This is a simple lab project built from adapting online tutorials into the Azure environment to go through the setup of domain controller, AD DS, DNS, DHCP, and cloud security tools Microsoft Sentinel and Microsoft Defender for Cloud on Azure Windows Server 2022 VMs.
 
 This project is aided by GitHub Copilot in its construction and documentation.
 
