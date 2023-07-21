@@ -9,7 +9,7 @@
 5. Search for Log Analytics workspaces. Create a new workspace inside the ``winser-rg`` resouce group. 
 6. Search for Microsoft Sentinel. Click Connect workspace. Select the workspace you just created.
 
-# Data connectors
+## Data connectors
 1. In Microsoft Sentinel, click Data connectors.
 2. Click Content Hub. Find Windows Security Events. Click Install. After installation is complete, click Manage.
 3. Select Windows Secuirty Events via AMA. Click Open Connector Page.
@@ -30,7 +30,7 @@ SecurityEvent
 | where EventID == 4625
 | project TimeGenerated,Computer,Account
 ```
-# Add a query rule
+## Add a query rule
 1. In Microsoft Sentinel, click Analytics.
 2. Click Rule template. Search for "Excessive Windows Logon Failures". Click Add.
 3. Click Create rule. Add a rule name (e.g. testrule2) to the ``winser-rg`` resource group. Click Next: Tactics.'
