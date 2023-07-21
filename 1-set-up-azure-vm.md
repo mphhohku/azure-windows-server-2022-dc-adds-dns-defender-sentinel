@@ -3,8 +3,8 @@
 ## Create a virutal machine
 1. Go to Azure portal. Search for Virtual Machines. Create a new virtual machine.
 2. Basics
-- Resource group: winser-rg
-- Virtual machine name: winserVM
+- Resource group: ``winser-rg``
+- Virtual machine name: ``winserVM``
 - Region: East Asia
 - Availability options: No infrastructure redundancy required
 - Image: Windows Server 2022 Datacenter: Azure Edition – x64 Gen2

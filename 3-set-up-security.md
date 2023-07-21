@@ -11,7 +11,7 @@
 
 # Data connectors
 1. In Microsoft Sentinel, click Data connectors.
-2. Click Content Hub. FInd Windows Security Events. Click Install. Then Click Manage.
+2. Click Content Hub. Find Windows Security Events. Click Install. After installation is complete, click Manage.
 3. Select Windows Secuirty Events via AMA. Click Open Connector Page.
 4. Click Create data collection rule. Add a new rule name (e.g. testrule) to the winser-rg resource group. Click Next: Resources.
 5. Click Add resources, then select the VMs ``winserVM`` and ``winserVM2``. Click Apply.
@@ -33,7 +33,7 @@ SecurityEvent
 # Add a query rule
 1. In Microsoft Sentinel, click Analytics.
 2. Click Rule template. Search for "Excessive Windows Logon Failures". Click Add.
-3. Click Create rule. Add a rule name (e.g. testrule2) to the winser-rg resource group. Click Next: Tactics.'
+3. Click Create rule. Add a rule name (e.g. testrule2) to the ``winser-rg`` resource group. Click Next: Tactics.'
 4. Select the following tactics:
 - Credential Access
 5. Click Next: Scheduling and suppression.

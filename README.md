@@ -1,18 +1,20 @@
-# DNS, DHCP, AD DS, and Cloud Security on Azure Windows Server 2022 Simple Lab
+# DNS, DHCP, AD DS, and Cloud Security on Azure Windows Server 2022 Simple Lab Project
 
 ## Introduction
-This is a lab project built from referencing online tutorials to go through the setup of DNS, DHCP, AD DS and cloud security tools Microsoft Sentinel and Microsoft Defender for Cloud on Azure Windows Server 2022.
+This is a simple lab project built from referencing online tutorials to go through the setup of DNS, DHCP, AD DS and cloud security tools Microsoft Sentinel and Microsoft Defender for Cloud on Azure Windows Server 2022.
 
 This project is aided by GitHub Copilot in its construction and documentation.
 
 ## Main features
 ### Section 1: Azure setup
-Windows Server 2022 VM on Azure
+2 Windows Server 2022 VMs on Azure
+- 1 VM for AD DS, DNS, DHCP, group policy
+- 1 VM as domain computer
 
 ### Section 2: Server setup
 Windows AD DS
 - Domain controller
-- Organization Units (User, Computer)
+- Organization Units (Add 1 user and 1 computer)
 
 Windows DNS
 - Forward lookup zone
@@ -34,9 +36,11 @@ Microsoft Sentinel
 - Data connector
 - Scheduled query rule
 
+### Section 4: Cleanup
+
 ## Reflections
 ### Major hiccups and mitigation
-- Section 1: Since this VM will be cleaned up after the labs, so I will use a faster VM size, Standard D2s v3, instead of the B1s, which would make Server Manager crash.
+- Section 1: Since this VM will be shut down when not in use and cleaned up after the labs, I will use a faster VM size, Standard D2s v3, instead of the B1s, which would make Server Manager crash.
 - Section 2: Took some time to figure out what causes the "DNS name not found" error when trying to apply the domain to the second VM. It turns out that the DNS server address is not set up correctly. I set it to the private IP address of the first VM in network connections > ethernet properties > IPv4 properties.
 - Section 2: Took some time to figure out who can see the mapped drive (``domainadmin1`` only)
 
