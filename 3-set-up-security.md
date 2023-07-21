@@ -36,4 +36,6 @@ SecurityEvent
 3. Click Create rule. Add a rule name (e.g. testrule2) to the ``winser-rg`` resource group. 
 4. Create rule.
 
-
+## Incident response (alert)
+1. Try to trigger the alert if you have the time. The alert can be viewed in the Incidents section of Microsoft Sentinel.
+2. Assign the incident to yourself, give it an active status, and mark it as closed (reason: test).
