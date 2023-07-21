@@ -8,21 +8,27 @@ This project is aided by GitHub Copilot in its construction and documentation.
 ## Main features
 ### Section 1: Azure setup
 Windows Server 2022 VM on Azure
+
 ### Section 2: Server setup
 Windows AD DS
 - Domain controller
 - Organization Units (User, Computer)
+
 Windows DNS
 - Forward lookup zone
 - Reverse lookup zone
+
 Windows DHCP ([not supported on Azure](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#can-i-deploy-a-dhcp-server-in-a-vnet); lab purposes only)
 - DHCP scope
+
 Group policy
 - Mapped drive
+
 ### Section 3: Security
 Microsoft Defender for Cloud:
 - Inventory
 - Recommendations
+
 Microsoft Sentinel
 - Log analytic workspace
 - Data connector
@@ -39,5 +45,5 @@ Microsoft Sentinel
 - Azure AD as an alternative to Windows AD DS (or do hybrid)
 - Azure DNS as an alternative to Windows DNS
 - Azure DHCP as an alternative to Windows DHCP
-- On-prem DHCP
+- On-premise DHCP server
 - Microsoft Defender for Cloud Security Alerts/Azure Defender
