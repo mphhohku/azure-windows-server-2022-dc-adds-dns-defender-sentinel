@@ -35,6 +35,7 @@ Microsoft Sentinel
 - Log analytic workspace
 - Data connector
 - Scheduled query rule
+- Incident response (alert)
 
 ### Section 4: Cleanup
 
