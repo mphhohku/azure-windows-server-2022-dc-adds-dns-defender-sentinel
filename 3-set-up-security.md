@@ -32,13 +32,8 @@ SecurityEvent
 ```
 ## Add a query rule
 1. In Microsoft Sentinel, click Analytics.
-2. Click Rule template. Search for "Excessive Windows Logon Failures". Click Add.
-3. Click Create rule. Add a rule name (e.g. testrule2) to the ``winser-rg`` resource group. Click Next: Tactics.'
-4. Select the following tactics:
-- Credential Access
-5. Click Next: Scheduling and suppression.
-6. Click Next: Incident settings.
-7. Click Next: Review.
-8. Click Create rule.
+2. Click Rule template. Search for "Excessive Windows Logon Failures". Select and click Enable.
+3. Click Create rule. Add a rule name (e.g. testrule2) to the ``winser-rg`` resource group. 
+4. Create rule.
 
 
