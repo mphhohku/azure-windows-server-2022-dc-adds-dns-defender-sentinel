@@ -19,9 +19,9 @@
 # Active Directory Users and Computers
 1. Go to Server Manager. Click Tools. Click Active Directory Users and Computers.
 2. Right click the domain name. Click New. Click Organizational Unit.
-3. Enter the name of the OU. Click OK.
-4. Right click the OU. Click New. Click User.
-5. Enter the user information. Click Next.
+3. Enter the name of the OU (e.g. TestOU). Click OK.
+4. Right click the OU. Create two new OUs within TestOU named ``TestOU - Computers`` and ``TestOU - Users``. Click ``TestOU - Users``. Click New. Click User.
+5. Enter the user information (e.g. ``domainadmin1``). Click Next.
 6. Enter the password. Click Next.
 7. Click Finish.
 8. Right click the user. Click Properties.
@@ -56,8 +56,8 @@
 10. Check the IP address of the DNS server (leave it as the same VM private address). Click until finish.
 
 # Test DHCP Scope (on-prem)
-1. Create a new Windows Server 2022 VM with the same VNet and subnet. Assign a new username and password. Keep the VM private address as dynamic but everything else as the same as the first VM created. Review + create.
-2. Connect to the VM.
+1. Create a new Windows Server 2022 VM ``winserVM2`` with the same VNet and subnet. Assign a new username and password. Keep the VM private address as dynamic but everything else as the same as the first VM created. Review + create.
+2. Connect to ``winserVM2``.
 3. Search for Advanced system settings. Click the Computer Name tab. Click Change.
 4. Click Domain. Enter the domain name (e.g. winser.local). Click OK.
 - If there is an error message saying the DNS name cannot be found, open network connections. Right click the Ethernet. Click Properties. Click Internet Protocol Version 4 (TCP/IPv4). Click Properties. Click Use the DNS server address (10.1.0.4).
@@ -66,15 +66,25 @@
 DHCP servers are not supported by Azure. ([Source](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#can-i-deploy-a-dhcp-server-in-a-vnet)
 
 # Test domain computer in AD DS
-1. Now you may add the computer to the domain. Go to Server Manager. Click Tools. Click Active Directory Users and Computers.
-2. Drag the computer to the OU. This is now a domain computer set up.
-3. Now login the domain computer with the domain admin credentials (username should be in the format of winseradmin@winser.local). Remember the AD DS Server VM should stay online.
-4. If login is successful, the domain computer is set up correctly.
+1. Now you may add the computer on ``winserVM2`` to the domain on ``winserVM``. In ``winserVM``, go to Server Manager. Click Tools. Click Active Directory Users and Computers.
+2. Drag the computer to the ``TestOU - Computers`` OU. This is now a domain computer set up.
+3. Now login the domain computer (``winserVM2``) with the domain admin credentials (username should be in the format of winseradmin@winser.local). Remember the AD DS Server VM should stay online.
+4. If login is successful, the domain computer (``winserVM2``) is set up correctly.
 
 # Add a group policy
-1. Open File Explorer. Go to C:. Create a new folder named ``Share``.
+1. In ``winserVM``, open File Explorer. Go to C:. Create a new folder named ``Share``.
 2. Right click the folder. Click Properties. Click Sharing. Click Advanced sharing.
 3. Tick the box of Share this folder. Click Permissions. Click Full Control for Everyone. Click OK.
 4. Back to Share Properties window. Click Security. Click Advanced. Click Disable inheritane. Click Remove all inherited permissions from this object. Click Add.
 5. Click Select a principal. Enter System. Click Full Control. Click OK.
 6. Add another principal. Enter Domain users. Click Full Control. Click OK.
+7. Enter the Share folder. Create a new text file. Enter some text. Save and close the file.
+8. In File Explorer, go to \\winserVM\Share. You should be able to access the file.
+9. Go to Server Manager. Click Tools. Click Group Policy Management.
+10. Expand the domain name and right click on ``TestOU - Users``. Click Create a GPO in this domain, and Link it here.
+11. Enter the name of the GPO (e.g. Mapped drive). Click OK.
+12. Right click the GPO. Click Edit.
+13. Go to User Configuration > Preferences > Windows Settings > Drive Maps. Right click. Click New > Mapped Drive.
+14. Enter the drive letter (e.g. Z:). Enter the path (e.g. \\winserVM\Share). Click OK.
+15. Now login the domain computer (``winserVM2``) with the domain admin (``domainadmin1``) credentials. You should be able to see the mapped drive when opening File Explorer.
+16. You can log in ``winserVM`` as ``domainadmin1`` as well and check the syncing of newly created files.
