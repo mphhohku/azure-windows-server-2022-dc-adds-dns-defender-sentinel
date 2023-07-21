@@ -1,6 +1,9 @@
 # Security
 [Reference](https://cyberwoxacademy.com/azure-cloud-detection-lab-project/) and [YouTube Tutorials](https://www.youtube.com/playlist?list=PLBNtagSCmDWw27ccfeWeiaMcpNIxpGHy4)
 
+### Notes on costs
+- Microsoft Defender for Cloud and Microsoft Sentinel are both very expensive and very recommended to use a free trial for this tutorial. Deleting the resource group will not disable Microsoft Defender for Cloud or Microsoft Sentinel. See Section 4 for cleanup instructions.
+
 ## Initial setup
 1. In the Azure portal, search for Microsoft Defender for Cloud.
 2. Click Getting started. Upgrade the subscription.
