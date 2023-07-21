@@ -43,6 +43,7 @@ Microsoft Sentinel
 - Section 1: Since this VM will be shut down when not in use and cleaned up after the labs, I will use a faster VM size, Standard D2s v3, instead of the B1s, which would make Server Manager crash.
 - Section 2: Took some time to figure out what causes the "DNS name not found" error when trying to apply the domain to the second VM. It turns out that the DNS server address is not set up correctly. I set it to the private IP address of the first VM in network connections > ethernet properties > IPv4 properties.
 - Section 2: Took some time to figure out who can see the mapped drive (``domainadmin1`` only)
+- Section 3: The UI of Microsoft Sentinel was revamped and looked different from months ago when I last used it. Took some time to figure out the place to create the data connector.
 
 ### Future improvement/lab ideas
 - Automation and disaster recovery of Section 2
