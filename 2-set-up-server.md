@@ -60,8 +60,21 @@
 2. Connect to the VM.
 3. Search for Advanced system settings. Click the Computer Name tab. Click Change.
 4. Click Domain. Enter the domain name (e.g. winser.local). Click OK.
+- If there is an error message saying the DNS name cannot be found, open network connections. Right click the Ethernet. Click Properties. Click Internet Protocol Version 4 (TCP/IPv4). Click Properties. Click Use the DNS server address (10.1.0.4).
 
 # Notes on DHCP server on Azure
 DHCP servers are not supported by Azure. ([Source](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#can-i-deploy-a-dhcp-server-in-a-vnet)
 
+# Test domain computer in AD DS
+1. Now you may add the computer to the domain. Go to Server Manager. Click Tools. Click Active Directory Users and Computers.
+2. Drag the computer to the OU. This is now a domain computer set up.
+3. Now login the domain computer with the domain admin credentials (username should be in the format of winseradmin@winser.local). Remember the AD DS Server VM should stay online.
+4. If login is successful, the domain computer is set up correctly.
 
+# Add a group policy
+1. Open File Explorer. Go to C:. Create a new folder named ``Share``.
+2. Right click the folder. Click Properties. Click Sharing. Click Advanced sharing.
+3. Tick the box of Share this folder. Click Permissions. Click Full Control for Everyone. Click OK.
+4. Back to Share Properties window. Click Security. Click Advanced. Click Disable inheritane. Click Remove all inherited permissions from this object. Click Add.
+5. Click Select a principal. Enter System. Click Full Control. Click OK.
+6. Add another principal. Enter Domain users. Click Full Control. Click OK.
