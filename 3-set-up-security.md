@@ -42,3 +42,8 @@ SecurityEvent
 ## Incident response (alert)
 1. Try to trigger the alert if you have the time. The alert can be viewed in the Incidents section of Microsoft Sentinel.
 2. Assign the incident to yourself, give it an active status, and mark it as closed (reason: test).
+
+## View recommendations for individual resource in Microsoft Defender for Cloud
+1. In Microsoft Defender for Cloud, click Inventory.
+2. You may click View resource on any individual resource to view its recommendations. 
+3. You may click on any recommendation to view its details to see mitigation steps.
